@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerEquipItensUI : MonoBehaviour
+public class PlayerInventory : MonoBehaviour
 {
-    public static PlayerEquipItensUI instance;
+    public static PlayerInventory instance;
 
     [Header("Player Equipaple Parts")]
     [SerializeField] GameObject head;
+    public bool[] isEquipFull;
+    public GameObject[] equipSlots;
 
     [SerializeField] GameObject playerInventory;
     bool inventoryOpen;
+    public bool[] isInventoryFull;
+    public GameObject[] slots;
 
     private void Awake()
     {
@@ -32,19 +36,28 @@ public class PlayerEquipItensUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            OpenCloseIventory();
+            if(!inventoryOpen)
+            {
+                OpenInventory();
+            }
+            else if(inventoryOpen)
+            {
+                CloseInventory();
+            }
         }
     }
 
-    public void OpenCloseIventory()
+    public void OpenInventory()
     {
         if (!inventoryOpen)
         {
             playerInventory.SetActive(true);
             inventoryOpen = true;
         }
-
-        else if (inventoryOpen)
+    }
+    public void CloseInventory()
+    {
+        if (inventoryOpen)
         {
             playerInventory.SetActive(false);
             inventoryOpen = false;

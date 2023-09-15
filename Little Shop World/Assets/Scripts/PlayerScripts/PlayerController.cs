@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     [Header("Player Settings")]
     [SerializeField] float moveSpeed;
 
@@ -15,6 +17,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
 
 
+    [SerializeField] public GameObject hatSpace;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else Destroy(this);
+    }
 
     // Start is called before the first frame update
     void Start()
