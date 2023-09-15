@@ -6,11 +6,11 @@ public class InteractionDetector : MonoBehaviour
 {
     List<IInteractable> interactablesInRange = new List<IInteractable>();
 
-
+    PlayerEquipItensUI pei;
     // Start is called before the first frame update
     void Start()
     {
-        
+        pei = PlayerEquipItensUI.instance;
     }
 
     // Update is called once per frame
@@ -20,6 +20,7 @@ public class InteractionDetector : MonoBehaviour
         {
             var interactable = interactablesInRange[0];
             interactable.Interact();
+            pei.OpenCloseIventory();
         }
     }
 
@@ -37,6 +38,7 @@ public class InteractionDetector : MonoBehaviour
         if (interactablesInRange.Contains(interactable))
         {
             interactablesInRange.Remove(interactable);
+            pei.OpenCloseIventory();
         }
     }
 }

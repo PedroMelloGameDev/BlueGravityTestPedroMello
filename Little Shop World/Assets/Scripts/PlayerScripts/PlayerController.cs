@@ -6,10 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player Settings")]
     [SerializeField] float moveSpeed;
-    //[SerializeField] float interactRange = 2;
-    //[SerializeField] int playerHP = 40;
-    //bool facingLeft = true;
-    //bool facingDown = false;
 
     [Header("Player Bools")]
     bool canMove = true;
@@ -17,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player Components")]
     [SerializeField] Animator playerAnimator;
     [SerializeField] Rigidbody2D rb;
+
 
 
     // Start is called before the first frame update
@@ -28,10 +25,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.E))
-        {
-            Interact();
-        }*/
+
     }
     
     void FixedUpdate()
@@ -49,24 +43,5 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetFloat("Vertical", movement.y);
         playerAnimator.SetFloat("Speed", movement.magnitude);
     }
-    /*void Interact()
-    {
 
-        /*RaycastHit2D hit;
-        if (Physics2D.Raycast(transform.position, hit, interactRange))
-        {
-
-            IInteractable interaction = hit.transform.GetComponent<IInteractable>();
-            if (interaction != null)
-                interaction.Interact();
-        }*/
-        /*Vector2 worldPoint = this.gameObject.transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(worldPoint, interactRange);
-        if (hit.collider != null)
-        {
-            IInteractable interaction = hit.transform.GetComponent<IInteractable>();
-            if (interaction != null)
-                interaction.Interact();
-        }
-    }*/
 }
