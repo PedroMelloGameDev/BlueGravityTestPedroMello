@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] public GameObject hatSpace;
 
+    PlayerData pd;
+
     private void Awake()
     {
         if (instance == null)
@@ -31,7 +33,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        pd = PlayerData.instance;
     }
 
     // Update is called once per frame
