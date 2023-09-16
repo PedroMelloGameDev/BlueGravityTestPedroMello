@@ -23,6 +23,7 @@ public class PlayerData : MonoBehaviour
     void Start()
     {
         ui = UIManager.instance;
+        ui.UpdateMoney(money);
     }
 
     // Update is called once per frame

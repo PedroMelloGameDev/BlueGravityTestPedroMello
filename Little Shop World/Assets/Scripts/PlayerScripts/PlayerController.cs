@@ -11,12 +11,17 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Bools")]
     bool canMove = true;
+    bool canAttack = true;
 
     [Header("Player Components")]
     [SerializeField] Animator playerAnimator;
     [SerializeField] Rigidbody2D rb;
 
+    [Header("Player Attack")]
+    [SerializeField] float attackRange;
+    [SerializeField] LayerMask hitLayers;
 
+    [Header("Player Equip Spaces")]
     [SerializeField] public GameObject hatSpace;
 
     PlayerData pd;
@@ -39,7 +44,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Attack();
     }
     
     void FixedUpdate()
@@ -57,5 +62,34 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetFloat("Vertical", movement.y);
         playerAnimator.SetFloat("Speed", movement.magnitude);
     }
+    void Attack()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if(canAttack)
+            {
+                playerAnimator.SetTrigger("Attack");
+                StartCoroutine("CoolDown");
 
+                Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, attackRange, hitLayers);
+                foreach (Collider2D target in hit)
+                {
+                    target.GetComponent<IDamageable>().TakeDamage(1);
+                }
+            }
+        }
+    }
+    IEnumerator CoolDown()
+    {
+        canAttack = false;
+        canMove = false;
+        yield return new WaitForSeconds(0.5f);
+        canMove = true;
+        canAttack = true;
+    }
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
 }
