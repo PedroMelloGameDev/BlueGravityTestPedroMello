@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 4866892501138839296, guid: 6a302c6a418332042bac877050aeb1a0, type: 3}
+  coolnessAmount: 80
 --- !u!1 &6472477886469000318
 GameObject:
   m_ObjectHideFlags: 0

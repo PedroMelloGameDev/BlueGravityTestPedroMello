@@ -8,11 +8,14 @@ public class EquipSlot : MonoBehaviour
 
     PlayerInventory pi;
     PlayerController pc;
+    UIManager ui;
+
     // Start is called before the first frame update
     void Start()
     {
         pi = PlayerInventory.instance;
         pc = PlayerController.instance;
+        ui = UIManager.instance;
     }
 
     // Update is called once per frame
@@ -31,6 +34,7 @@ public class EquipSlot : MonoBehaviour
         {
             child.GetComponent<SpawnDroppedItem>().Spawn();
             GameObject.Destroy(child.gameObject);
+            ui.UpdateCoolnessFill(0);
         }
     }
 }

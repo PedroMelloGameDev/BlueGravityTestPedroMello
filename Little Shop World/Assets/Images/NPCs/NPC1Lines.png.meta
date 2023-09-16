@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cc58c50da04588841b524cf43ae9be7a
+guid: 39b1b5d967aa2574fae006fca0ab05b1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 160
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,127 +116,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hats_0
+      name: NPC1Lines_0
       rect:
         serializedVersion: 2
-        x: 58
-        y: 322
-        width: 189
-        height: 167
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 299
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea5cc235b8d1cd24683f95cfebecaa0c
-      internalID: 1781187213
+      spriteID: e4149158a434abe47b25a4ef35619eba
+      internalID: -1678789588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hats_1
+      name: NPC1Lines_1
       rect:
         serializedVersion: 2
-        x: 276
-        y: 322
-        width: 189
-        height: 168
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 325
+        y: 0
+        width: 299
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e9d8eb071be67d44a3d379a1e40fbe6
-      internalID: 447608682
+      spriteID: 15b42cdde0db88948a9a4f47fdc3bff7
+      internalID: -1838402420
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hats_2
+      name: NPC1Lines_2
       rect:
         serializedVersion: 2
-        x: 511
-        y: 322
-        width: 189
-        height: 168
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 650
+        y: 0
+        width: 299
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d664c184d47048546a5c4b3e4e499169
-      internalID: -1469176498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hats_3
-      rect:
-        serializedVersion: 2
-        x: 745
-        y: 333
-        width: 189
-        height: 168
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b848bb0b0d79627488f5c8135736b402
-      internalID: -766701334
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hats_4
-      rect:
-        serializedVersion: 2
-        x: 275
-        y: 114
-        width: 189
-        height: 167
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bcc78fb6f9b096446bb292878850934d
-      internalID: 388608742
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hats_5
-      rect:
-        serializedVersion: 2
-        x: 511
-        y: 114
-        width: 189
-        height: 168
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61fd0444b3f23844d8abe3ce24d4201b
-      internalID: 877152033
+      spriteID: eeed8a44ae8abf141980b60f90f4df7a
+      internalID: 1062478384
       vertices: []
       indices: 
       edges: []
@@ -252,24 +189,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hats_8: -2076947047
-      Hats_0: 1781187213
-      Hats_13: -2111840834
-      Hats_7: 1191563180
-      Hats_17: 731950550
-      Hats_12: 551387094
-      Hats_15: 1746005930
-      Hats_11: -2127352004
-      Hats_14: -64286815
-      Hats_6: 1556486780
-      Hats_3: -766701334
-      Hats_5: 877152033
-      Hats_1: 447608682
-      Hats_9: -1410179503
-      Hats_10: -816945364
-      Hats_2: -1469176498
-      Hats_4: 388608742
-      Hats_16: -1837672279
+      NPC1Lines_0: -1678789588
+      NPC1Lines_1: -1838402420
+      NPC1Lines_2: 1062478384
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -9,6 +9,7 @@ public class ShopkeeperScript : MonoBehaviour, IInteractable
     [SerializeField] GameObject buyAndSellButtons;
     [SerializeField] GameObject itensToSell;
     [SerializeField] GameObject notEnoughtMoneyImage;
+    [SerializeField] GameObject coolestHatInfo;
 
 
     PlayerInventory pi;
@@ -46,13 +47,15 @@ public class ShopkeeperScript : MonoBehaviour, IInteractable
         buyAndSellButtons.SetActive(false);
         itensToSell.SetActive(false);
         notEnoughtMoneyImage.SetActive(false);
+        coolestHatInfo.SetActive(false);
     }
-    void StartInteraction()
+    public void StartInteraction()
     {
         outline.SetActive(true);
         shopKeeperScreen.SetActive(true);
         buyAndSellButtons.SetActive(true);
         itensToSell.SetActive(false);
+        coolestHatInfo.SetActive(false);
     }
     public void BuyItensScreen()
     {
@@ -60,6 +63,15 @@ public class ShopkeeperScript : MonoBehaviour, IInteractable
         shopKeeperScreen.SetActive(true);
         buyAndSellButtons.SetActive(false);
         itensToSell.SetActive(true);
+        coolestHatInfo.SetActive(false);
+    }
+    public void CoolestHatInformation()
+    {
+        outline.SetActive(true);
+        shopKeeperScreen.SetActive(true);
+        buyAndSellButtons.SetActive(false);
+        itensToSell.SetActive(false);
+        coolestHatInfo.SetActive(true);
     }
 
 }

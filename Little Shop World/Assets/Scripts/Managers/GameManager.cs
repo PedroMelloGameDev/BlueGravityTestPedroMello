@@ -6,7 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    bool isPaused = false;
+    [SerializeField] GameObject pauseScreen;
 
+    [SerializeField] GameObject blockedPath;
 
 
     private void Awake()
@@ -19,12 +22,36 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 1;
+        pauseScreen.SetActive(false);
+        blockedPath.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PauseAndResume();
+        }
+    }
+    public void PauseAndResume()
+    {
+        if(!isPaused)
+        {
+            isPaused = true;
+            Time.timeScale = 0;
+            pauseScreen.SetActive(true);
+        }
+        else if(isPaused)
+        {
+            isPaused = false;
+            Time.timeScale = 1;
+            pauseScreen.SetActive(false);
+        }
+    }
+    public void OpenPath()
+    {
+        blockedPath.SetActive(false);
     }
 }
