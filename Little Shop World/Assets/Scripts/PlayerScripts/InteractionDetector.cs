@@ -20,7 +20,7 @@ public class InteractionDetector : MonoBehaviour
         {
             var interactable = interactablesInRange[0];
             interactable.Interact();
-            pi.OpenInventory();
+            //pi.OpenInventory();
         }
     }
 

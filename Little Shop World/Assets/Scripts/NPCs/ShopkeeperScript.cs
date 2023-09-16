@@ -10,15 +10,20 @@ public class ShopkeeperScript : MonoBehaviour, IInteractable
     [SerializeField] GameObject itensToSell;
     [SerializeField] GameObject notEnoughtMoneyImage;
 
+
+    PlayerInventory pi;
+
     // Start is called before the first frame update
     void Start()
     {
         AllScreensFalse();
+        pi = PlayerInventory.instance;
     }
 
     public void Interact()
     {
         StartInteraction();
+        pi.OpenInventory();
     }
     void OnTriggerEnter2D(Collider2D other)
     {

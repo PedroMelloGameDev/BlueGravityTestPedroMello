@@ -27,7 +27,7 @@ public class EquipButton : MonoBehaviour
 
     public void EquipItem()
     {
-        for (int i = 0; i < pi.slots.Length; i++)
+        for (int i = 0; i < pi.equipSlots.Length; i++)
         {
             if (pi.isEquipFull[i] == false) //check to see if the iventory slot is empty
             {
