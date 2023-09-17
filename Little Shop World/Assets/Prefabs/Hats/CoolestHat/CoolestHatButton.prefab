@@ -173,7 +173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 572.19653, y: 665.0609}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 99.4189, y: 76.3267}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &43504087687732159
@@ -285,3 +285,4 @@ MonoBehaviour:
   itemImage: {fileID: 6857512862053496798, guid: 9689b6e6feabc0844b481237cb5ade67, type: 3}
   coolnessAmount: 100
   isCoolestHat: 1
+  isMagicianHat: 0

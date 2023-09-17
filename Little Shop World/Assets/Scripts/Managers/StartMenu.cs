@@ -8,6 +8,12 @@ public class StartMenu : MonoBehaviour
     [SerializeField] GameObject howToPlay;
     bool isHowToPlayOpen;
 
+    AudioScript audio;
+
+    void Start()
+    {
+        audio = AudioScript.instance;
+    }
     public void Play()
     {
         SceneManager.LoadScene("LittleShopWorld", LoadSceneMode.Single);

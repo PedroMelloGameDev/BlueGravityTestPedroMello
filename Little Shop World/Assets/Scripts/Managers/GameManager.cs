@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject pauseScreen;
 
     [SerializeField] GameObject blockedPath;
+    [SerializeField] GameObject coolestHat;
 
 
     private void Awake()
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         pauseScreen.SetActive(false);
         blockedPath.SetActive(true);
+        coolestHat.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,5 +55,6 @@ public class GameManager : MonoBehaviour
     public void OpenPath()
     {
         blockedPath.SetActive(false);
+        coolestHat.SetActive(true);
     }
 }

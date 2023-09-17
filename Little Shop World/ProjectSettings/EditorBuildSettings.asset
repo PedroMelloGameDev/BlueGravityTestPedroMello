@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: e29c0f1b3907d5b45ba0ffe6a9d723e8
+  - enabled: 1
     path: Assets/Scenes/LittleShopWorld.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
