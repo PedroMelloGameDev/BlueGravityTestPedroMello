@@ -49,17 +49,13 @@ public class ShopkeeperScript : MonoBehaviour, IInteractable
 
     public void BuyPlayerHat()
     {
-        /*if (playerInventorySlot1.transform.childCount > 0)
-        {
-            pi.isEquipFull[i] = false;
-        }*/
         for (int i = 0; i < pi.slots.Length; i++)
         {
             if (pi.isInventoryFull[i] == true) //check to see if the iventory slot is empty
             {
-
                 pi.isInventoryFull[i] = false;
                 Destroy(pi.slots[i].transform.GetChild(i).gameObject);
+                pd.UpdateMoney(5);
                 break;
             }
         }

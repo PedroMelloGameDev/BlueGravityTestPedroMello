@@ -12,6 +12,7 @@ public class PlayerData : MonoBehaviour
 
 
     UIManager ui;
+    AudioScript audioSource;
 
     private void Awake()
     {
@@ -24,6 +25,14 @@ public class PlayerData : MonoBehaviour
     void Start()
     {
         ui = UIManager.instance;
+        audioSource = AudioScript.instance;
+
+        ui.UpdateMoney(money);
+    }
+    public void UpdateMoney(int amount)
+    {
+        money += amount;
+        audioSource.CoinSound();
         ui.UpdateMoney(money);
     }
     public void UpdatePlayerCoolness(int coolness)

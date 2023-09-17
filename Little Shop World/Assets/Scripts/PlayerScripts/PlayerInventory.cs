@@ -19,6 +19,7 @@ public class PlayerInventory : MonoBehaviour
     public bool[] isInventoryFull;
     public GameObject[] slots;
 
+
     private void Awake()
     {
         if (instance == null)
