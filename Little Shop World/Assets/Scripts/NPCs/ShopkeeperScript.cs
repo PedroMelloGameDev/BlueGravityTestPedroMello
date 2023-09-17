@@ -12,9 +12,6 @@ public class ShopkeeperScript : MonoBehaviour, IInteractable
     [SerializeField] GameObject notEnoughtMoneyImage;
     [SerializeField] GameObject coolestHatInfo;
 
-    [SerializeField] GameObject playerInventorySlot1;
-    [SerializeField] GameObject playerInventorySlot2;
-    [SerializeField] GameObject playerInventorySlot3;
 
     PlayerInventory pi;
     PlayerData pd;
