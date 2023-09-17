@@ -8,6 +8,7 @@ public class EquipSlot : MonoBehaviour
 
     PlayerInventory pi;
     PlayerController pc;
+    PlayerData pd;
     UIManager ui;
 
     // Start is called before the first frame update
@@ -15,6 +16,7 @@ public class EquipSlot : MonoBehaviour
     {
         pi = PlayerInventory.instance;
         pc = PlayerController.instance;
+        pd = PlayerData.instance;
         ui = UIManager.instance;
     }
 
@@ -27,14 +29,15 @@ public class EquipSlot : MonoBehaviour
         }
     }
 
-    public void ClearSlot()
+    public void ClearSlot() //clearing the equip slot so the player can equip a new hat
     {
         pc.hatSpace.GetComponent<SpriteRenderer>().sprite = null;
         foreach (Transform child in transform)
         {
-            child.GetComponent<SpawnDroppedItem>().Spawn();
+            child.GetComponent<SpawnDroppedItem>().Spawn(); //instantiating the hat so it can go back to the players inventory if he has space, if not, the hats "drops"
             GameObject.Destroy(child.gameObject);
             ui.UpdateCoolnessFill(0);
+            pd.UpdatePlayerCoolness(0);
         }
     }
 }

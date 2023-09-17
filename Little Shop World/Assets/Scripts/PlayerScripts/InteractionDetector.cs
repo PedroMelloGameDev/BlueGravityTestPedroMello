@@ -7,10 +7,13 @@ public class InteractionDetector : MonoBehaviour
     List<IInteractable> interactablesInRange = new List<IInteractable>();
 
     PlayerInventory pi;
+    AudioScript audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         pi = PlayerInventory.instance;
+        audioSource = AudioScript.instance;
     }
 
     // Update is called once per frame
@@ -20,7 +23,7 @@ public class InteractionDetector : MonoBehaviour
         {
             var interactable = interactablesInRange[0];
             interactable.Interact();
-            //pi.OpenInventory();
+            audioSource.InteractSound();
         }
     }
 
@@ -38,7 +41,7 @@ public class InteractionDetector : MonoBehaviour
         if (interactablesInRange.Contains(interactable))
         {
             interactablesInRange.Remove(interactable);
-            pi.CloseInventory();
+            pi.CloseInventory(); //making sure the players inventory is closed after an interaction with the shopkeeper
         }
     }
 }

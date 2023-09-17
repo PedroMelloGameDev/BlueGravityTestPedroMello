@@ -8,6 +8,7 @@ public class PlayerData : MonoBehaviour
 
 
     [SerializeField] public int money;
+    [SerializeField] public int playerCoolness;
 
 
     UIManager ui;
@@ -25,10 +26,8 @@ public class PlayerData : MonoBehaviour
         ui = UIManager.instance;
         ui.UpdateMoney(money);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void UpdatePlayerCoolness(int coolness)
     {
-        
+        playerCoolness = coolness;
     }
 }

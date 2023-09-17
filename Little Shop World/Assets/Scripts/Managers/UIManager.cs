@@ -25,12 +25,7 @@ public class UIManager : MonoBehaviour
         victoryScreen.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void UpdateCoolnessFill(int coolnessFillAmount)
+    public void UpdateCoolnessFill(int coolnessFillAmount) //amount of coolness that the player has at the moment, determined by what hat he is wearing
     {
         coolnessFill.fillAmount = coolnessFillAmount / 100.0f;
     }

@@ -6,9 +6,13 @@ public class AudioScript : MonoBehaviour
 {
     public static AudioScript instance;
 
-    [SerializeField] AudioSource effectSoundSource;
+    [SerializeField] AudioSource effectSoundSource; //source where the audio will come out off
 
-    [SerializeField] AudioClip buttonSound; 
+    [SerializeField] AudioClip buttonSound;
+    [SerializeField] AudioClip playerAttackSound;
+    [SerializeField] AudioClip interactSound;
+    [SerializeField] AudioClip coinSound;
+    [SerializeField] AudioClip victorySound;
 
     private void Awake()
     {
@@ -17,19 +21,24 @@ public class AudioScript : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void PlayButtonSound()
     {
         effectSoundSource.PlayOneShot(buttonSound);
+    }
+    public void PlayerAttack()
+    {
+        effectSoundSource.PlayOneShot(playerAttackSound);
+    }
+    public void InteractSound()
+    {
+        effectSoundSource.PlayOneShot(interactSound);
+    }
+    public void CoinSound()
+    {
+        effectSoundSource.PlayOneShot(coinSound);
+    }
+    public void VictorySound()
+    {
+        effectSoundSource.PlayOneShot(victorySound);
     }
 }

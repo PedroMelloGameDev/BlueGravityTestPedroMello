@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
             pauseScreen.SetActive(false);
         }
     }
-    public void OpenPath()
+    public void OpenPath() //open the path so the player can get the coolest hat
     {
         blockedPath.SetActive(false);
         coolestHat.SetActive(true);

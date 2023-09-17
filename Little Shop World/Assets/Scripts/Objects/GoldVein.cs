@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class GoldVein : MonoBehaviour, IDamageable
 {
-    int hp = 5;
+    [SerializeField] int hp = 5;
     bool canTakeDamage = true;
     float damageCooldown = 0.4f;
-    [SerializeField] GameObject goldCoin;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    [SerializeField] GameObject goldCoin;
 
     // Update is called once per frame
     void Update()
@@ -36,7 +32,7 @@ public class GoldVein : MonoBehaviour, IDamageable
                 canTakeDamage = false;
                 damageCooldown = 0;
 
-                int randomCoins = Random.Range(0, 3);
+                int randomCoins = Random.Range(0, 3); //instantiating a "random" number of coins per hit
                 if (randomCoins == 0)
                 {
                     GameObject coin1 = Instantiate(goldCoin, transform.position, Quaternion.identity);

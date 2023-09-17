@@ -7,11 +7,13 @@ public class PlayerInventory : MonoBehaviour
 {
     public static PlayerInventory instance;
 
-    [Header("Player Equipaple Parts")]
+    [Header("Player Equipaple Settings")]
     [SerializeField] GameObject head;
     public bool[] isEquipFull;
     public GameObject[] equipSlots;
 
+
+    [Header("Player Inventory Setting")]
     [SerializeField] GameObject playerInventory;
     bool inventoryOpen;
     public bool[] isInventoryFull;

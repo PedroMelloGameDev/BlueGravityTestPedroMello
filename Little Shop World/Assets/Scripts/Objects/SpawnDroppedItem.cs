@@ -12,14 +12,11 @@ public class SpawnDroppedItem : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Spawn()
     {
-        Instantiate(itemToSpawn, player.position, Quaternion.identity);
+        Instantiate(itemToSpawn, player.position, Quaternion.identity); 
+        //instantiating the dropped object at the player position
+        //if his inventory has space it will go directly to it
+        //if not it stays on the ground where it can be picked up later
     }
 }

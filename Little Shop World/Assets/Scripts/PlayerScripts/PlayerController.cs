@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public GameObject hatSpace;
 
     PlayerData pd;
+    AudioScript audioSource;
 
     private void Awake()
     {
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         pd = PlayerData.instance;
+        audioSource = AudioScript.instance;
     }
 
     // Update is called once per frame
@@ -53,7 +55,7 @@ public class PlayerController : MonoBehaviour
             Move();
     }
 
-    void Move()
+    void Move() //player movement script that I already had from a previous GameJam
     {
         Vector2 movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         movement.Normalize();
@@ -70,16 +72,17 @@ public class PlayerController : MonoBehaviour
             {
                 playerAnimator.SetTrigger("Attack");
                 StartCoroutine("CoolDown");
+                audioSource.PlayerAttack();
 
-                Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, attackRange, hitLayers);
+                Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, attackRange, hitLayers); //search for any target in the attack range area
                 foreach (Collider2D target in hit)
                 {
-                    target.GetComponent<IDamageable>().TakeDamage(1);
+                    target.GetComponent<IDamageable>().TakeDamage(1); //if the target has an IDamagable script, it will take damage
                 }
             }
         }
     }
-    IEnumerator CoolDown()
+    IEnumerator CoolDown() //cooldown so the player dont attack and walk at the same time, and dont constantly attack
     {
         canAttack = false;
         canMove = false;
@@ -87,7 +90,7 @@ public class PlayerController : MonoBehaviour
         canMove = true;
         canAttack = true;
     }
-    void OnDrawGizmosSelected()
+    void OnDrawGizmosSelected() //gizmos to see the attack range of the player
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, attackRange);

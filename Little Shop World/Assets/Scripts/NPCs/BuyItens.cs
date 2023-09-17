@@ -25,14 +25,9 @@ public class BuyItens : MonoBehaviour
         pd = PlayerData.instance;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void PurchuseItem()
     {
-        if(pd.money < itemPrice)
+        if(pd.money < itemPrice) //checking to see if the player can afford to buy the item
         {
             notEnoughtMoneyImage.SetActive(true);
         }
@@ -42,6 +37,8 @@ public class BuyItens : MonoBehaviour
             ui.UpdateMoney(pd.money);
             notEnoughtMoneyImage.SetActive(false);
             Instantiate(itemToInstantiate, player.position, Quaternion.identity);
+            //instantiating the item in the player position
+            //if the inventory is full the item stays on the ground where he can pick it up later
         }
     }
 }
